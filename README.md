@@ -45,7 +45,8 @@ The project uses the following database schema:
    - Add 5 columns according to this structure:
    - Columns: `id`, `show_name`, `booking_date`, `user_name`
 
-    ![Table Columns](https://github.com/NeerajKumar805/Ticket-Booking-System-Spring-Boot/assets/69098331/bed805d2-d989-4047-850d-3fdc9edd3771)
+   ![img9](https://github.com/NeerajKumar805/Ticket-Booking-System-Spring-Boot/assets/69098331/87b96b26-cd06-41c7-9dc1-ef0d66cd2dff)
+
 
    - Update the database configuration in `src/main/resources/application.properties` with your database credentials.
 
