@@ -1,0 +1,84 @@
+<!-- src/main/resources/templates/availableTickets.html -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Available Tickets</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 20px;
+            background-color: #f2f2f2;
+        }
+
+        h2 {
+			text-align: center;
+            color: #333;
+        }
+
+        table {
+            width: 50%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        div.log-info {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            background-color: #fff;
+        }
+        p {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        a.button {
+            display: inline-block;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        a.button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h2>Available Tickets</h2>
+
+    <div class="log-info" th:utext="${logInfo}"></div>
+
+    <table align="center">
+        <tr>
+            <th>Show Name</th>
+            <th>Total Seats</th>
+        </tr>
+        <tr th:each="ticket : ${tickets}">
+            <td th:text="${ticket.showName}"></td>
+            <td th:text="${ticket.totalSeats}"></td>
+        </tr>
+    </table>
+    <p>
+        <a href="/tickets/form" class="button">Book a Ticket</a>
+        <span> | </span>
+        <a href="/tickets/reports" class="button">View Booked Tickets</a>
+    </p>
+</body>
+</html>

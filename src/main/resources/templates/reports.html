@@ -1,0 +1,122 @@
+<!-- src/main/resources/templates/ticketReports.html -->
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticket Reports</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f2f2f2;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        p {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        a.button {
+            display: inline-block;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        a.button:hover {
+            background-color: #45a049;
+        }
+        button.delete-button {
+            background-color: #f44336;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            margin-left: 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button.delete-button:hover {
+            background-color: #d32f2f;
+        }
+        .success-message {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: orangered;
+            color: white;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Ticket Reports</h2>
+    <div th:if="${param.deleted}" class="success-message">
+        Ticket successfully canceled!
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Show Name</th>
+                <th>Booking Date</th>
+                <th>User Name</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="ticket : ${tickets}">
+                <td th:text="${ticket.id}"></td>
+                <td th:text="${ticket.showName}"></td>
+                <td th:text="${ticket.bookingDate}"></td>
+                <td th:text="${ticket.userName}"></td>
+                <td>
+					<button class="delete-button" th:onclick="'confirmDelete(\'' + ${ticket.id} + '\')'">Cancel</button>
+				</td>
+            </tr>
+        </tbody>
+    </table>
+    <p>
+        <a href="/tickets/form" class="button">Book a Ticket</a>
+        <span> | </span>
+        <a href="/tickets/available" class="button">View Available Tickets</a>
+    </p>
+    <script>
+		function confirmDelete(ticketId) {
+            var confirmation = confirm("Are you sure you want to cancel this ticket?");
+            if (confirmation) {
+                window.location.href = '/tickets/cancel/' + ticketId;
+            }
+        }
+	</script>
+</body>
+</html>
