@@ -1,5 +1,5 @@
 ```markdown
-# Spring Boot Ticket Booking Project
+## Spring Boot Ticket Booking Project
 
 Welcome to the Spring Boot Ticket Booking project! This application allows users to seamlessly book tickets for various shows, cancel reservations, and retrieve insightful reports about ticket sales.
 
@@ -12,14 +12,14 @@ Welcome to the Spring Boot Ticket Booking project! This application allows users
 - [API Endpoints](#api-endpoints)
 - [Additional Features](#additional-features)
 - [Contributing](#contributing)
-- [License](#license)
+- [Screenshots](#license)
 
 ## Prerequisites
 
 Before running the project, ensure you have the following installed:
 
 - **Java 8 or higher**
-- **STS (Preffered)**
+- **STS (Preferred)**
 - **Maven**
 - **MySQL database**
 
@@ -34,12 +34,16 @@ Before running the project, ensure you have the following installed:
 2. **Navigate to the project directory:**
 
    ```bash
-   cd ticket-booking-spring-boot
+   cd ticket-booking-system--spring-boot
    ```
 
-3. **Set up the MySQL Database:**
+3. **Set up the Database Schema:**
+
+The project uses the following database schema:
+
    - Create a MySQL database named `movie_ticket_booking_system`.
-   - Add 5 column according to this stucture :
+   - Add 5 columns according to this structure:
+   - Columns: `id`, `show_name`, `booking_date`, `user_name`
 
     ![Table Columns](https://github.com/NeerajKumar805/Ticket-Booking-System-Spring-Boot/assets/69098331/528fc88e-d33c-4ffb-b2ca-81f04a78b683)
 
@@ -48,7 +52,7 @@ Before running the project, ensure you have the following installed:
 3. **Run the application:**
 
    ```bash
-   mvn spring-boot:run
+   mvn spring-boot: run
    ```
 
    The application will start at `http://localhost:8080`.
@@ -83,16 +87,11 @@ ticket-booking-spring-boot/
 ├── pom.xml
 └── README.md
 ```
+![img8](https://github.com/NeerajKumar805/Ticket-Booking-System-Spring-Boot/assets/69098331/de313545-a209-4311-b899-2c5e72b0f015)
 
 - `src/main/java/project/ticketBooking`: Java source files.
 - `src/main/resources`: Resources such as application properties and templates.
 
-## Database Schema
-
-The project uses the following database schema:
-
-- **Table: `ticket`**
-  - Columns: `id`, `show_name`, `booking_date`, `user_name`
 
 # Technologies Used
 - Spring Boot
@@ -147,5 +146,4 @@ Contributions are welcome! Feel free to submit issues and pull requests.
 ![img5](https://github.com/NeerajKumar805/Ticket-Booking-System-Spring-Boot/assets/69098331/b8aff79b-3e42-49a9-8b4b-468040ba5aa9)
 ![img6](https://github.com/NeerajKumar805/Ticket-Booking-System-Spring-Boot/assets/69098331/cc42eb7d-1e7c-402f-b85b-cc51afb0b845)
 ![img7](https://github.com/NeerajKumar805/Ticket-Booking-System-Spring-Boot/assets/69098331/f70596b6-e985-44af-b8da-e61b659a8e28)
-![img8](https://github.com/NeerajKumar805/Ticket-Booking-System-Spring-Boot/assets/69098331/de313545-a209-4311-b899-2c5e72b0f015)
 ```
