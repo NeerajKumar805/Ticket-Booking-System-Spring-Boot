@@ -1,7 +1,7 @@
 
-## Spring Boot Ticket Booking Project
+## Description 
 
-Welcome to the Spring Boot Ticket Booking project! This application allows users to seamlessly book tickets for various shows, cancel reservations, and retrieve insightful reports about ticket sales.
+*Welcome to the Spring Boot Ticket Booking project! This application allows users to seamlessly book tickets for various shows, cancel reservations, and retrieve insightful reports about ticket sales.*
 
 ## Table of Contents
 
