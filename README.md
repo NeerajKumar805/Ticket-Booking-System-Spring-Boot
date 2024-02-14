@@ -1,4 +1,4 @@
-```markdown
+
 ## Spring Boot Ticket Booking Project
 
 Welcome to the Spring Boot Ticket Booking project! This application allows users to seamlessly book tickets for various shows, cancel reservations, and retrieve insightful reports about ticket sales.
@@ -18,10 +18,10 @@ Welcome to the Spring Boot Ticket Booking project! This application allows users
 
 Before running the project, ensure you have the following installed:
 
-- **Java 8 or higher**
-- **STS (Preferred)**
-- **Maven**
-- **MySQL database**
+- Java 8 or higher
+- STS (Preferred)
+- Maven
+- MySQL database
 
 ## Getting Started
 
@@ -52,11 +52,11 @@ The project uses the following database schema:
 
 3. **Run the application:**
 
-   ```bash
+   
    mvn spring-boot: run
    ```
-
    The application will start at `http://localhost:8080`.
+   ```
 
 ## Project Structure
 
@@ -147,4 +147,3 @@ Contributions are welcome! Feel free to submit issues and pull requests.
 ![img5](https://github.com/NeerajKumar805/Ticket-Booking-System-Spring-Boot/assets/69098331/b8aff79b-3e42-49a9-8b4b-468040ba5aa9)
 ![img6](https://github.com/NeerajKumar805/Ticket-Booking-System-Spring-Boot/assets/69098331/cc42eb7d-1e7c-402f-b85b-cc51afb0b845)
 ![img7](https://github.com/NeerajKumar805/Ticket-Booking-System-Spring-Boot/assets/69098331/f70596b6-e985-44af-b8da-e61b659a8e28)
-```
