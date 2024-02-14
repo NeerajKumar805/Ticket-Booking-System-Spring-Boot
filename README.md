@@ -12,7 +12,7 @@ Welcome to the Spring Boot Ticket Booking project! This application allows users
 - [API Endpoints](#api-endpoints)
 - [Additional Features](#additional-features)
 - [Contributing](#contributing)
-- [Screenshots](#scrrenshots)
+- [Screenshots](#Screenshots)
 
 ## Prerequisites
 
@@ -138,7 +138,7 @@ ticket-booking-spring-boot/
 
 Contributions are welcome! Feel free to submit issues and pull requests.
 
-## Scrrenshots
+## Screenshots
 
 ![img1](https://github.com/NeerajKumar805/Ticket-Booking-System-Spring-Boot/assets/69098331/4fd9ccdd-e449-46c2-b688-eb64a33bbadf)
 ![img2](https://github.com/NeerajKumar805/Ticket-Booking-System-Spring-Boot/assets/69098331/daaaaa9a-e469-40d9-9eba-ebe65b29642b)
