@@ -12,7 +12,7 @@ Welcome to the Spring Boot Ticket Booking project! This application allows users
 - [API Endpoints](#api-endpoints)
 - [Additional Features](#additional-features)
 - [Contributing](#contributing)
-- [Screenshots](#license)
+- [Screenshots](#scrrenshots)
 
 ## Prerequisites
 
