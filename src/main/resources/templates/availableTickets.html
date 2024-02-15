@@ -1,84 +1,40 @@
-<!-- src/main/resources/templates/availableTickets.html -->
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Available Tickets</title>
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 20px;
-            background-color: #f2f2f2;
-        }
-
-        h2 {
-			text-align: center;
-            color: #333;
-        }
-
-        table {
-            width: 50%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
-
-        th, td {
-            border: 1px solid #ddd;
-            padding: 8px;
-            text-align: left;
-        }
-
-        th {
-            background-color: #4CAF50;
-            color: white;
-        }
-
-        div.log-info {
-            margin-top: 20px;
-            padding: 10px;
-            border: 1px solid #ddd;
-            background-color: #fff;
-        }
-        p {
-            text-align: center;
-            margin-top: 20px;
-        }
-
-        a.button {
-            display: inline-block;
-            padding: 10px 20px;
-            text-align: center;
-            text-decoration: none;
-            background-color: #4CAF50;
-            color: white;
-            border-radius: 4px;
-            transition: background-color 0.3s;
-        }
-
-        a.button:hover {
-            background-color: #45a049;
-        }
-    </style>
+    <!-- Add Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 </head>
-<body>
-    <h2>Available Tickets</h2>
+<body class="bg-light">
+    <div class="container mt-4">
+        <h2 class="text-center text-dark">Available Tickets</h2>
 
-    <div class="log-info" th:utext="${logInfo}"></div>
+        <table class="table table-bordered table-striped mt-3">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Show Name</th>
+                    <th>Total Seats</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="ticket : ${tickets}">
+                    <td th:text="${ticket.showName}"></td>
+                    <td th:text="${ticket.totalSeats}"></td>
+                </tr>
+            </tbody>
+        </table>
 
-    <table align="center">
-        <tr>
-            <th>Show Name</th>
-            <th>Total Seats</th>
-        </tr>
-        <tr th:each="ticket : ${tickets}">
-            <td th:text="${ticket.showName}"></td>
-            <td th:text="${ticket.totalSeats}"></td>
-        </tr>
-    </table>
-    <p>
-        <a href="/tickets/form" class="button">Book a Ticket</a>
-        <span> | </span>
-        <a href="/tickets/reports" class="button">View Booked Tickets</a>
-    </p>
+        <p class="text-center mt-3">
+            <a href="/tickets/form" class="btn btn-success">Book a Ticket</a>
+            <span class="mx-2"> | </span>
+            <a href="/tickets/reports" class="btn btn-primary">View Booked Tickets</a>
+        </p>
+    </div>
+
+    <!-- Add Bootstrap JS and Popper.js (if needed) -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </body>
 </html>

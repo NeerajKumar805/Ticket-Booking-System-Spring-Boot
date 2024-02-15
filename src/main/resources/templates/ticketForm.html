@@ -1,101 +1,46 @@
-<!-- src/main/resources/templates/ticketForm.html -->
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book Ticket</title>
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f2f2f2;
-            padding: 20px;
-            text-align: center;
-        }
-
-        h2 {
-            color: #333;
-        }
-
-        form {
-            width: 300px;
-            margin: 0 auto;
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        label {
-            display: block;
-            margin-bottom: 8px;
-            color: #555;
-        }
-
-        input, button {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 15px;
-            box-sizing: border-box;
-        }
-
-        button {
-            background-color: #4CAF50;
-            color: #fff;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background-color: #45a049;
-        }
-        p {
-            text-align: center;
-            margin-top: 20px;
-        }
-
-        a.button {
-            display: inline-block;
-            padding: 10px 20px;
-            text-align: center;
-            text-decoration: none;
-            background-color: #4CAF50;
-            color: white;
-            border-radius: 4px;
-            transition: background-color 0.3s;
-        }
-
-        a.button:hover {
-            background-color: #45a049;
-        }
-        .success-message {
-            margin-top: 10px;
-            padding: 10px;
-            background-color: lightgreen;
-            border-radius: 4px;
-        }
-    </style>
+    <!-- Add Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 </head>
-<body>
-    <h2>Book Ticket</h2>
-    
-    <div th:if="${param.inserted}" class="success-message">
-        Ticket successfully Booked!
+<body class="bg-light text-center">
+    <div class="container mt-5">
+            <h2 class="text-dark mb-4">Book Ticket</h2>
+        <div class="card mx-auto p-4 shadow" style="max-width: 400px;">
+
+            <form action="/tickets/book" method="post" th:object="${ticket}">
+                <div class="form-group">
+                    <label for="showName">Show Name:</label>
+                    <input type="text" id="showName" name="showName" th:field="*{showName}" class="form-control" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="userName">User Name:</label>
+                    <input type="text" id="userName" name="userName" th:field="*{userName}" class="form-control" required>
+                </div>
+
+                <button type="submit" class="btn btn-success btn-block">Book Ticket</button>
+            </form>
+
+            <div th:if="${param.inserted}" class="alert alert-success mt-3">
+                Ticket successfully Booked!
+            </div>
+        </div>
+
+        <div class="mt-4">
+            <a href="/tickets/reports" class="btn btn-primary">View Booked Tickets</a>
+            <span class="mx-2"> | </span>
+            <a href="/tickets/available" class="btn btn-info">View Available Tickets</a>
+        </div>
     </div>
-    <form action="/tickets/book" method="post" th:object="${ticket}">
-        <label for="showName">Show Name:</label>
-        <input type="text" id="showName" name="showName" th:field="*{showName}" required>
 
-        <label for="userName">User Name:</label>
-        <input type="text" id="userName" name="userName" th:field="*{userName}" required>
-
-        <button type="submit">Book Ticket</button>
-    </form>
-    <p>
-        <a href="/tickets/reports" class="button">View Booked Tickets</a>
-        <span> | </span>
-        <a href="/tickets/available" class="button">View Available Tickets</a>
-    </p>
+    <!-- Add Bootstrap JS and Popper.js (if needed) -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </body>
 </html>
